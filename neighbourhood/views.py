@@ -13,3 +13,16 @@ def dashboard(request):
     #adding context
     post = {'post':post}
     return render(request,'dashboard.html', post)
+
+def search_results(request):
+
+    if 'neighbourhood' in request.GET and request.GET["neighbourhood"]:
+        search_term = request.GET.get("project")
+        searched_category = NeighbourHood.search_neighbourhood(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'search.html',{"message":message,"category": searched_category})
+
+    else:
+        message = "You haven't searched for anything yet"
+        return render(request, 'search.html',{"message":message})
