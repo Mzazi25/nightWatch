@@ -7,5 +7,8 @@ from django.conf.urls.static import static
 urlpatterns = [
 
     path('',views.dashboard,name='dashboad'),
+    path('dashboard',views.dashboard,name='dashboard'),
 
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
