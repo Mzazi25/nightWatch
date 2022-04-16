@@ -27,7 +27,7 @@ class Profile(models.Model):
     username = models.CharField(max_length =30)
     description = models.TextField(null=True,blank=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True,related_name="posts")
-    neighbor_hood = models.ForeignKey(NeighbourHood, on_delete=models.CASCADE, related_name="neighbourhood", null=True, blank=True)
+    neighbor_hood = models.ForeignKey(NeighbourHood, on_delete=models.CASCADE, related_name="nighthood", null=True, blank=True)
     email = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
@@ -42,7 +42,7 @@ class Profile(models.Model):
 class Business(models.Model):
     name = models.CharField(max_length=150, null=True, default='')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="business", null  =True, default='')
-    neighbor_hood = models.ForeignKey(NeighbourHood, on_delete=models.CASCADE, related_name="hoodbus", null=True, default='')
+    neighbor_hood = models.ForeignKey(NeighbourHood, on_delete=models.CASCADE, related_name="hooddy", null=True, default='')
     email = models.CharField(max_length=80, null=True, default='mzazi@ymal.com')
 
     def save_business(self):
@@ -58,8 +58,8 @@ class Business(models.Model):
 
 class Post(models.Model):
     post = models.CharField(max_length=100, null=True, blank=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posts", null=True, blank=True)
-    neighbor_hood = models.ForeignKey(NeighbourHood, on_delete=models.CASCADE, related_name="posts", null=True,blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posters", null=True, blank=True)
+    neighbor_hood = models.ForeignKey(NeighbourHood, on_delete=models.CASCADE, related_name="posters", null=True,blank=True)
 
 class Comments(models.Model):
     user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE, related_name='user')
