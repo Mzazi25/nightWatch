@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 User = get_user_model()
 
 # Create your views here.
-# @login_required(login_url='accounts/login/')
+@login_required(login_url='accounts/login/')
 def dashboard(request):
     post = Post.objects.all()
     
