@@ -7,7 +7,7 @@ A web application that allows you to be in the loop about everything happening i
 ![views](static/images/scrensht.png)
 
 ### Live link
-Visit the application on 
+Visit the application on https://nightwatch15.herokuapp.com/accounts/register/?next=/
 ### Setup & Run Instructions
 - Create and activate a virtual environment
 - Install the dependencies listed in the requirements.txt
