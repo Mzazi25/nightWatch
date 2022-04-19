@@ -8,7 +8,7 @@
 <br>
 <div class="col">
     <div class="jumbotron">
-            <h6>Share with us Today</h6>
+            <h6>Hood Updates</h6>
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -17,7 +17,7 @@
                         {% csrf_token %}
                         <div class="mb-3">
                             <textarea required class="form-control" name="description" rows="3"
-                                placeholder="What's on your mind..."></textarea>
+                                placeholder="Whats happening on your Hood..."></textarea>
                         </div>
                         <input required type="file" name="image" id="files" class="form-control" />
                         <button id="postBtn" type="submit" class="btn btn-primary mb-3">Share </button>
@@ -31,10 +31,10 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title"><span class="material-icons-outlined">
-                    Design
+                    Emergency Contacts
                 </span></h5>
                 <p class="card-text">
-                    Web design refers to the design of websites that are displayed on the internet. It usually refers to the user experience aspects of website development rather than software development.
+                    In case there's an emergency in your area, Please contact the toll numbers provided on your mailbox. 
                 </p>
                 
             </div>
@@ -45,10 +45,10 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title"><span class="material-icons-outlined">
-                    Usability
+                    Security
                 </span></h5>
                 <p class="card-text">
-                    Usability is a measure of how well a specific user in a specific context can use a product/design to achieve a defined goal effectively, efficiently and satisfactorily.
+                   The Emergency Police services are always available in case of any security issue. We ensure that our Neighbourhood is 100% safe
                 </p>
                 
             </div>
@@ -59,10 +59,10 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title"><span class="material-icons-outlined">
-                    content
+                    Service Charge
                 </span></h5>
                 <p class="card-text">
-                    Web content is the text, visual or audio content that is made available online and user encountered as part of the online usage and experience on websites. It may include text, images, sounds and audio, online videos, among other items placed within web pages.
+                   We tend to ask for some token to motivate our workers who work tirelessly to make sure that we have a clean environment, we would therefore ask for $50 a month from each household
                 </p>
             
             </div>
@@ -72,16 +72,24 @@
         <div class="card" >
             <div class="card-body">
                 <h5 class="card-title"><span class="material-icons-outlined">
-                    Relevance
+                    Noise Pollution
                 </span></h5>
                 <p class="card-text">
-                    A well-designed website can help you form a good impression on your prospective customers. It can also help you nurture your leads and get more conversions. But, more importantly, it provides good user experience and helps your website visitors access and navigate your website with ease
+                   Since we should be mindful of our neighbours, we would like to emphasize that we should not make so much noise especially at night.
                 </p>
         
             </div>
         </div>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-md-12">
+      <div id="jumbos" class="updates mt-2">
+        <div class="users">
+          <h6>Hood Updates</h6>
+        </div>
+        <div class="jumbotron" id="scrolls">
 
 {%endblock%}
 

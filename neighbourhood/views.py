@@ -14,14 +14,13 @@ def dashboard(request):
         
         post = Post.objects.create(
             image = image,
-            description = data['post_data'],
+            # description = data['post_data'],
             user = request.user,
         )
-        return redirect('dash')
+        return redirect('dashboard')
     person=request.user.pk
     posts = Post.objects.all()
-    profile = Profile.objects.filter(user=person).all()
-    ctx = {"profile":profile,"posts":posts}
+    ctx = {"posts":posts}
     return render(request,"dashboard.html",ctx)
 
 def search_results(request):
