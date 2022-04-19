@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 
 # Create your models here.
@@ -57,9 +58,12 @@ class Business(models.Model):
         return business
 
 class Post(models.Model):
-    post = models.CharField(max_length=100, null=True, blank=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posters", null=True, blank=True)
-    neighbor_hood = models.ForeignKey(NeighbourHood, on_delete=models.CASCADE, related_name="posters", null=True,blank=True)
+    image = CloudinaryField('image',blank=True)
+    description = models.TextField(blank=True)
+    pub_date = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User,on_delete=models.CASCADE,blank=True,related_name='author')
+    def __str__(self):
+        return self.description
 
 class Comments(models.Model):
     user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE, related_name='user')

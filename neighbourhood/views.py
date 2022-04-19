@@ -8,11 +8,21 @@ User = get_user_model()
 # Create your views here.
 @login_required(login_url='accounts/login/')
 def dashboard(request):
-    post = Post.objects.all()
-    
-    #adding context
-    post = {'post':post}
-    return render(request,'dashboard.html', post)
+    if request.method == 'POST':
+        data = request.POST
+        image = request.FILES.get('post_pic')
+        
+        post = Post.objects.create(
+            image = image,
+            description = data['post_data'],
+            user = request.user,
+        )
+        return redirect('dash')
+    person=request.user.pk
+    posts = Post.objects.all()
+    profile = Profile.objects.filter(user=person).all()
+    ctx = {"profile":profile,"posts":posts}
+    return render(request,"dashboard.html",ctx)
 
 def search_results(request):
 
