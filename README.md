@@ -1,6 +1,6 @@
 # Night Watch
 ## Project Description
-A web application that allows you to be in the loop about everything happening in your neighborhood.
+A web application that allows you to be in the loop about everything happening in your neighborhood and users can check for updates
 
 ##### By Caleb Langat
 
