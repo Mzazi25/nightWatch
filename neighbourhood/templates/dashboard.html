@@ -6,6 +6,26 @@
 <br>
 <br>
 <br>
+<div class="col">
+    <div class="jumbotron">
+            <h6>Share with us Today</h6>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+            <div class="">
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <textarea required class="form-control" name="description" rows="3"
+                                placeholder="What's on your mind..."></textarea>
+                        </div>
+                        <input required type="file" name="image" id="files" class="form-control" />
+                        <button id="postBtn" type="submit" class="btn btn-primary mb-3">Share </button>
+                    </form>
+            </div>
+        </div>
+    </div>
+
 <div class="row">
     <div class="col">
         <div class="card">
@@ -61,6 +81,8 @@
             </div>
         </div>
     </div>
-  </div>
+</div>
 
-{% endblock %}
+{%endblock%}
+
+
